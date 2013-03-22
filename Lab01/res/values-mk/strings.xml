@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ТВ Серии</string>
+    <string name="action_settings">Подесувања</string>
+    <string name="hello_world">Добредојдовте во Апликацијата!</string>
+    <string name="button_about">За Апликацијата</string>
+    <string name="button_popular">Популарни Серии</string>
+    <string name="button_all">Сите Серии</string>
+    <string name="title_activity_display_about">Опис на Апликацијата</string>
+    <string name="title_activity_display_popular">Популарни Серии</string>
+    <string name="title_activity_display_all">Сите Серии</string>
+    <string name="thanks">Ви благодариме за гласот</string>
+    <string name="voted">Гласавте за</string>
+    <string name="description">Оваа Апликација ги прикажува најпопуларните серии во последните 3 дена и ви овозможува
+        да гласате за вашите омилени серии. Преку копчето Популарни серии може да ја видите листата на најпопуларни
+        серии и нивниот рејтинг. Преку копчето Сите Серии може да ја видите листата на сите серии и со клик на серија 
+        може да гласате за таа серија.</string>
+</resources>
