@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Series List</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="addSerieItem">Add Serie</string>
+    <string name="download_title">Downloading</string>
+    <string name="download_description">Downloading ToDo items</string>
+    <string name="Title">Enter Serie Title</string>
+    <string name="Rating">Enter Serie Rating</string>
+    <string name="all_series_items">http://tvseries.apphb.com/RestServiceImpl.svc/json/getSerie/on</string>
+
+
+</resources>
