@@ -1,0 +1,80 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Lab03.PivotPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="AppBarSave.png" Text="Add New" Click="AddNewSerie"/>
+            <shell:ApplicationBarIconButton IconUri="AppBarSearch.png" Text="Location" Click="Location_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+        <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <phone:Pivot Title="MY APPLICATION">
+            <!--Pivot item one.-->
+            <phone:PivotItem Header="My Series">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Add Your Series using the button on the app bar" x:Name="txtStart" Visibility="Collapsed"/>
+                    <ListBox Grid.Row="1" x:Name="MyList" ItemsSource="{Binding}" FontSize="22" SelectionMode="Multiple">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid HorizontalAlignment="Stretch" Width="450">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Left" Text="{Binding title}" FontSize="30" VerticalAlignment="Center"/>
+                                    <Button Grid.Column="2" HorizontalAlignment="Right" BorderThickness="0" Click="DeleteButton_Click" VerticalAlignment="Bottom" Height="80" Width="auto" Padding="0">
+                                        <Image Source="AppBarDelete.png" VerticalAlignment="Bottom"/>
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="Popular Series">
+                <Grid>
+                    <ListBox x:Name="PopularSeries" ItemsSource="{Binding}" FontSize="22" SelectionMode="Multiple">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid HorizontalAlignment="Stretch" Width="430">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Left" Text="{Binding title}" FontSize="30" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="2" HorizontalAlignment="Right" Text="{Binding imdb}" VerticalAlignment="Bottom" FontSize="40" Width="auto"/>    
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+
+            </phone:PivotItem>
+
+            
+        </phone:Pivot>
+       
+    </Grid>
+</phone:PhoneApplicationPage>
